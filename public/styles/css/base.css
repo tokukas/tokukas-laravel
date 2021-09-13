@@ -1,0 +1,53 @@
+* {
+  font-family: 'Quicksand', Quicksand, sans-serif;
+}
+
+body {
+  min-width: 200px;
+}
+
+.btn {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.material-icons, .fas ::before, .fab ::before {
+  max-width: 1.5rem;
+  max-height: 1.5rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.icon-btn {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-decoration: none;
+  padding: 0.25rem;
+  background-color: unset;
+  color: #0066cb;
+  border: unset;
+  cursor: pointer;
+}
+
+.icon-btn:hover {
+  color: #0066cb;
+}

@@ -1,0 +1,131 @@
+@import '../global/var';
+
+header {
+    display: inline;
+}
+
+.navbar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 6;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 4px map-get($grey, 'light');
+
+    .navbar-brand {
+        display: inline-flex;
+        gap: 0.25rem;
+
+        .text-brand {
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 0;
+            color: $primaryColor;
+
+            .primary {
+                font-size: 1.2rem;
+                line-height: 1.2rem;
+                font-weight: 600;
+                letter-spacing: 1.5px;
+            }
+
+            .secondary {
+                font-size: 0.75rem;
+                line-height: 0.8rem;
+                letter-spacing: 0;
+                text-indent: 1px;
+            }
+        }
+    }
+
+    .hamburger-menu {
+        background-color: inherit;
+        border: none;
+        display: none;
+
+        .line {
+            width: 1.5rem;
+            height: 3px;
+            background-color: map-get($secondaryColor, '1') ;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+    }
+
+    .hamburger-menu.close {
+        .line1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .line2 {
+            opacity: 0;
+        }
+
+        .line3 {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+    }
+
+    .navbar-collapse {
+        .nav-link {
+            display: inline-block;
+            color: map-get($secondaryColor, '1') !important;
+        }
+
+        .nav-link.active {
+            font-weight: 600;
+        }
+
+        .nav-link:hover {
+            font-weight: bolder;
+        }
+
+        .button-group {
+            .btn {
+                flex: 1 1 50%;
+            }
+        }
+    }
+
+    .profile-menus {
+        .btn {
+            justify-content: start;
+            margin: 0.125rem 0;
+        }
+
+        .btn-primary {
+            color: $primaryColor;
+        }
+
+        .btn-danger {
+            color: #bb2d3b;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .navbar {
+        .hamburger-menu {
+            display: inline;
+        }
+
+        .button-group {
+            margin: 0.5rem 0;
+        }
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .navbar {
+        .navbar-brand {
+            .text-brand {
+                display: none;
+            }
+        }
+
+        .button-group {
+            flex-wrap: wrap;
+        }
+    }
+}

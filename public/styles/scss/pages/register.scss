@@ -1,0 +1,97 @@
+@import '../global/var';
+@import '../global/typography';
+
+
+$blueSecondary: map-get($secondaryColor, '1');
+
+.left-box, .right-box {
+    padding: 1rem;
+    height: 100%;
+}
+
+.left-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .login-box {
+        min-width: 60%;
+        max-width: 24rem;
+
+        .title {
+            color: $primaryColor;
+            font-weight: 500;
+        }
+
+        .field {
+            margin-bottom: 1.25rem;
+
+            .material-icons {
+                color: map-get($grey, 'battleship');
+            }
+
+        }
+
+        .password-field {
+            .form-control {
+                border-right: none;
+            }
+
+            .show-password-toggle {
+                background-color: inherit;
+                border: 1px solid #ced4da;
+                border-left: none;
+
+                .material-icons {
+                    color: $blueSecondary;
+                }
+            }
+        }
+    }
+}
+
+.right-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: $blueSecondary;
+    color: #ffffff;
+
+    .container {
+        padding: 0;
+
+        .cover {
+            margin-bottom: 1.5rem;
+            width: 100%;
+            max-width: 30rem;
+            object-fit: cover;
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 640px) {
+    .left-box, .right-box {
+        padding: 2rem 1rem;
+    }
+
+    .left-box {
+        .login-box {
+            width: 100%;
+        }
+    }
+
+    .right-box {
+        .cover {
+            max-width: 50vw !important;
+            height: auto;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+        }
+    }
+}
