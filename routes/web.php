@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\About;
+use App\Http\Controllers\Home;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,16 +14,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Root/Main/Home Page
+Route::get('/', [Home::class, 'index']);
 
-Route::get('/', function () {
-    return view('home/index', [
-        'title' => 'TOKUKAS | Toko Buku Bekas',
-        'myName' => 'Fityan'
-    ]);
-});
-
-Route::get('about', function () {
-    return view('about/index', [
-        'title' => 'Tentang Kami | TOKUKAS'
-    ]);
-});
+// About Page
+Route::get('about', [About::class, 'index']);
