@@ -1,0 +1,89 @@
+@import '../global/var';
+@import '../global/typography';
+
+
+$blueSecondary: map-get($secondaryColor, '1');
+
+body {
+    background-color: map-get($grey, 'soft');
+}
+
+.brand {
+    display: inline-flex;
+    gap: 0.25rem;
+    text-decoration: none;
+    align-items: center;
+
+    .text-brand {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 0;
+        color: $primaryColor;
+
+        .primary {
+            font-size: 1.2rem;
+            line-height: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+        }
+
+        .secondary {
+            font-size: 0.75rem;
+            line-height: 0.8rem;
+            letter-spacing: 0;
+            text-indent: 1px;
+        }
+    }
+}
+
+.centering-box {
+    min-height: 100vh;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .login-box {
+        .title {
+            color: $primaryColor;
+            font-size: 1.75rem;
+            margin-bottom: 0;
+        }
+
+        .field {
+            margin-bottom: 1rem;
+
+            .material-icons {
+                color: map-get($grey, 'battleship');
+            }
+        }
+
+        .password-field {
+            .forgot-password {
+                font-size: 0.875rem;
+            }
+
+            .form-control {
+                border-right: none;
+            }
+
+            .show-password-toggle {
+                background-color: inherit;
+                border: 1px solid #ced4da;
+                border-left: none;
+
+                .material-icons {
+                    color: $blueSecondary;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .centering-box {
+        justify-content: flex-start;
+    }
+}

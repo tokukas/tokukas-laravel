@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\About;
 use App\Http\Controllers\Home;
+use App\Http\Controllers\Login;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,6 @@ Route::get('/', [Home::class, 'index']);
 
 // About Page
 Route::get('about', [About::class, 'index']);
+
+// Login Page
+Route::get('login', [Login::class, 'index']);
