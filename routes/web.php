@@ -3,6 +3,7 @@
 use App\Http\Controllers\About;
 use App\Http\Controllers\Home;
 use App\Http\Controllers\Login;
+use App\Http\Controllers\Register;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +24,6 @@ Route::get('about', [About::class, 'index']);
 
 // Login Page
 Route::get('login', [Login::class, 'index']);
+
+// Register Page
+Route::get('register', [Register::class, 'index']);
