@@ -43,6 +43,8 @@
                                 @csrf
                                 {{-- TODO: set verification id --}}
                                 {{-- <input type="hidden" name="id" value="<?= $verificator['id']; ?>"> --}}
+
+                                {{-- Email field --}}
                                 <div class="field">
                                     <label for="email" class="form-label">Email</label>
                                     <div class="input-group">
@@ -57,6 +59,8 @@
                                         </a>
                                     </div>
                                 </div>
+
+                                {{-- Fullname field --}}
                                 <div class="field">
                                     <label for="fullname" class="form-label">Nama Lengkap</label>
                                     <div class="input-group">
@@ -65,12 +69,14 @@
                                                 <i class="material-icons">badge</i>
                                             </label>
                                         </div>
-                                        <input type="text" name="fullname" id="fullname" class="form-control {{-- <?=($validation->hasError('fullname'))?'is-invalid':'';?> --}}" value="{{-- <?=old('fullname')?:'';?> --}}" required>
-                                        {{-- <?php if ($validation->hasError('fullname')) : ?>
-                                            <div class="invalid-feedback"><?= $validation->getError('fullname'); ?></div>
-                                        <?php endif; ?> --}}
+                                        <input type="text" name="fullname" id="fullname" class="form-control @error('fullname') is-invalid @enderror" value="{{ old('fullname') }}" required>
+                                        @error('fullname')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
+
+                                {{-- Password field --}}
                                 <div class="field password-field">
                                     <label for="password" class="form-label">Kata Sandi</label>
                                     <div class="input-group">
@@ -79,15 +85,17 @@
                                                 <i class="material-icons">lock</i>
                                             </label>
                                         </div>
-                                        <input type="password" name="password" id="password" class="form-control {{-- <?=($validation->hasError('password'))?'is-invalid':'';?> --}}" required>
+                                        <input type="password" name="password" id="password" class="form-control @error('password') is-invalid @enderror" required>
                                         <button type="button" class="input-group-text btn show-password-toggle">
                                             <i class="material-icons">visibility_off</i>
                                         </button>
-                                        {{-- <?php if ($validation->hasError('password')) : ?>
-                                            <div class="invalid-feedback"><?= $validation->getError('password'); ?></div>
-                                        <?php endif; ?> --}}
+                                        @error('password')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
+
+                                {{-- Confirm password field --}}
                                 <div class="field password-field">
                                     <label for="cpassword" class="form-label">Konfirmasi Kata Sandi</label>
                                     <div class="input-group">
@@ -96,15 +104,17 @@
                                                 <i class="material-icons">vpn_key</i>
                                             </label>
                                         </div>
-                                        <input type="password" name="cpassword" id="cpassword" class="form-control {{-- <?=($validation->hasError('cpassword'))?'is-invalid':'';?> --}}" required>
+                                        <input type="password" name="cpassword" id="cpassword" class="form-control @error('cpassword') is-invalid @enderror" required>
                                         <button type="button" class="input-group-text btn show-password-toggle">
                                             <i class="material-icons">visibility_off</i>
                                         </button>
-                                        {{-- <?php if ($validation->hasError('cpassword')) : ?>
-                                            <div class="invalid-feedback"><?= $validation->getError('cpassword'); ?></div>
-                                        <?php endif; ?> --}}
+                                        @error ('cpassword')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
+
+                                {{-- Register button --}}
                                 <div class="field d-flex">
                                     <button type="submit" class="btn btn-spinner btn-primary flex-fill">
                                         <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>

@@ -42,9 +42,10 @@
                         <section class="container mb-3">
                             <p class="text-center">Masukkan kode verifikasi yang sudah kami kirim ke email <strong>{blablabla@email.com}</strong></p>
                             <form action="{{ url('/register/verify') }}" method="post" data-form-loading="true">
-                                {{-- <?= csrf_field(); ?> --}}
+                                @csrf
                                 {{-- TODO: set verification id --}}
-                                <input type="hidden" name="verification_id" value="">
+                                {{-- <input type="hidden" name="verification_id" value="<?= $verificator['id']; ?>"> --}}
+
                                 <div class="field">
                                     <label for="verificationCode" class="form-label">Kode Verifikasi</label>
                                     <div class="input-group">
@@ -69,9 +70,13 @@
                             <div class="text-center">
                                 <p class="m-0">Tidak menerima kode?</p>
                                 <span class="form-text">Coba cek di folder spam atau sampah anda, atau</span>
+
                                 <form action="{{ url('/register') }}" method="post" data-form-loading="true">
+                                    @csrf
+
                                     {{-- TODO: set verification email --}}
-                                    <input type="hidden" name="email" value="">
+                                    {{-- <input type="hidden" name="email" value="<?= $verificator['email']; ?>"> --}}
+
                                     <button type="submit" class="resend-otp btn btn-spinner btn-link btn-sm p-0" disabled>
                                         <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
                                         <span class="btn-name" data-loading-name="Mengirim ulang kode...">Kirim Ulang Kode</span>

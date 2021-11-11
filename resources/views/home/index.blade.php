@@ -12,6 +12,7 @@
 @section('main')
     <section class="container-fluid search-container">
         <form action="{{ url('/') }}" method="post" class="search-field">
+            @csrf
             <label class="form-label h1 mb-3" for="floatingInput">Cari Buku Anda</label>
             <div class="search-box input-group">
                 <input type="text" class="form-control" id="floatingInput" placeholder="Buku...">

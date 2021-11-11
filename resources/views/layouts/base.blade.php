@@ -65,12 +65,9 @@
 
 
     {{-- Print Console --}}
-    {{-- TODO: Fix this to blade syntax --}}
-    {{-- <?php if ($console = session()->getFlashdata('console')) : ?>
-        <script>
-            <?= $console['script']; ?>
-        </script>
-    <?php endif; ?> --}}
+    @if ($console = session('console'))
+        <script>{{ $console }}</script>
+    @endif
 </body>
 
 </html>

@@ -52,10 +52,10 @@
                                                 <i class="material-icons">email</i>
                                             </div>
                                         </div>
-                                        <input type="email" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control" value="{{-- <?= old('email') ?: '' ?> --}}" required autofocus tabindex="1">
-                                        {{-- <?php if ($validation->hasError('email')) : ?>
-                                            <div class="invalid-feedback"><?= $validation->getError('email'); ?></div>
-                                        <?php endif; ?> --}}
+                                        <input type="email" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" required autofocus tabindex="1">
+                                        @error('email')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="field agreement">

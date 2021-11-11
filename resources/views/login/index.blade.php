@@ -39,7 +39,7 @@
 
                         <section class="container">
                             <form action="{{ url('/login') }}" method="post">
-                                {{-- <?= csrf_field(); ?> --}}
+                                @csrf
 
                                 {{-- Email --}}
                                 <div class="field">
@@ -50,10 +50,10 @@
                                                 <i class="material-icons">email</i>
                                             </div>
                                         </div>
-                                        <input type="email" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control" required autofocus tabindex="1">
-                                        {{-- <?php if ($validation->hasError('email')) : ?>
-                                            <div class="invalid-feedback"><?= $validation->getError('email'); ?></div>
-                                        <?php endif; ?> --}}
+                                        <input type="email" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control @error('email') is-invalid @enderror" required autofocus tabindex="1">
+                                        @error('email')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
 
@@ -69,13 +69,13 @@
                                                 <i class="material-icons">vpn_key</i>
                                             </div>
                                         </div>
-                                        <input type="password" name="password" id="password" class="form-control" required tabindex="2">
+                                        <input type="password" name="password" id="password" class="form-control @error('password') is-invalid @enderror" required tabindex="2">
                                         <button type="button" class="input-group-text btn show-password-toggle">
                                             <i class="material-icons">visibility_off</i>
                                         </button>
-                                        {{-- <?php if ($validation->hasError('password')) : ?>
-                                            <div class="invalid-feedback"><?= $validation->getError('password'); ?></div>
-                                        <?php endif; ?> --}}
+                                        @error('password')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
 
