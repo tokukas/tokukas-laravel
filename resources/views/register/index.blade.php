@@ -38,7 +38,7 @@
                         </section>
                         <section class="container">
                             <form action="{{ url('/register') }}" method="post" data-form-loading="true">
-                                {{-- <?= csrf_field(); ?> --}}
+                                @csrf
 
                                 {{-- Email --}}
                                 <div class="field">

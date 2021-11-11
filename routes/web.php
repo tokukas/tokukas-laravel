@@ -28,5 +28,8 @@ Route::get('login', [Login::class, 'index']);
 // Register Page
 Route::get('register', [Register::class, 'index']);
 
-// Verify register
+// Verify Email Page
 Route::get('register/verify', [Register::class, 'verify']);
+
+// New Account Page
+Route::get('register/new', [Register::class, 'new']);

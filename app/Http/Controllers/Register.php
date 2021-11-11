@@ -20,4 +20,12 @@ class Register extends Controller
             'title' => 'Verifikasi Email | TOKUKAS'
         ]);
     }
+
+
+    public function new()
+    {
+        return view('register.new', [
+            'title' => 'Buat Akun | TOKUKAS'
+        ]);
+    }
 }
