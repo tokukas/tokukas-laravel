@@ -46,6 +46,8 @@ body {
     align-items: center;
 
     .register-box {
+        max-width: 420px;
+
         .title {
             color: $primaryColor;
             font-size: 1.75rem;

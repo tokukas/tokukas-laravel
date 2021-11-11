@@ -24,8 +24,8 @@
 
 
     {{-- App Styles (Global) --}}
-    <link rel="preload" href="styles/css/base.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="styles/css/base.css"></noscript>
+    <link rel="preload" href="{{ url('/styles/css/base.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ url('/styles/css/base.css') }}"></noscript>
 
     {{-- <link rel="preload" href="styles/css/alert.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="styles/css/alert.css"></noscript> --}}
@@ -36,7 +36,7 @@
 
 
     {{-- Web Properties --}}
-    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url('/assets/favicon.ico') }}" type="image/x-icon">
     <title>{{ $title }}</title>
 </head>
 
@@ -55,9 +55,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous" defer></script>
 
     {{-- App Scripts --}}
-    <script src="scripts/js/app.js" defer></script>
-    <script src="scripts/js/helper.js" defer></script>
-    <script src="scripts/js/tooltips.js" defer></script>
+    <script src="{{ url('/scripts/js/app.js') }}" defer></script>
+    <script src="{{ url('/scripts/js/helper.js') }}" defer></script>
+    <script src="{{ url('/scripts/js/tooltips.js') }}" defer></script>
 
 
     {{-- CUSTOM SCRIPTS SECTION --}}

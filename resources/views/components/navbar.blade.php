@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light container-fluid">
     <div class="container-md">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="{{ url('/') }}">
             <img src="assets/brand.svg" alt="brand" height="32" width="100%">
             <div class="text-brand">
                 <span class="primary" translate="no">TOKUKAS</span>
@@ -17,10 +17,10 @@
         <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 10rem;">
                 <li class="nav-item">
-                    <a class="nav-link" href="about">Tentang Kami</a>
+                    <a class="nav-link" href="{{ url('/about') }}">Tentang Kami</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="sell">Jual Buku</a>
+                    <a class="nav-link" href="{{ url('/sell') }}">Jual Buku</a>
                 </li>
                 <li class="nav-item dropdown d-none">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -37,8 +37,8 @@
 
             @if (empty($loginSession))
                 <div class="button-group d-flex gap-2">
-                    <a href="login" class="btn btn-outline-primary">Masuk</a>
-                    <a href="register" class="btn btn-primary">Daftar</a>
+                    <a href="{{ url('/login') }}" class="btn btn-outline-primary">Masuk</a>
+                    <a href="{{ url('/register') }}" class="btn btn-primary">Daftar</a>
                 </div>
             @else
                 <div class="dropdown">
@@ -47,13 +47,13 @@
                     </button>
                     <ul class="dropdown-menu dropdown-menu-lg-end profile-menus" aria-labelledby="profileDropdownMenuLink">
                         <li>
-                            <a class="dropdown-item btn btn-primary" href="account">
+                            <a class="dropdown-item btn btn-primary" href="{{ url('/account') }}">
                                 <i class="material-icons" translate="no">account_circle</i>
                                 <span translate="no"><strong><?= $loginSession['name']; ?></strong></span>
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item btn" href="settings">
+                            <a class="dropdown-item btn" href="{{ url('/settings') }}">
                                 <i class="material-icons" translate="no">settings</i>
                                 <span>Pengaturan</span>
                             </a>
@@ -90,7 +90,7 @@
                     <i class="material-icons" translate="no">close</i>
                     <span>Batalkan</span>
                 </button>
-                <a href="logout" class="btn btn-outline-danger">
+                <a href="{{ url('/logout') }}" class="btn btn-outline-danger">
                     <i class="material-icons" translate="no">logout</i>
                     <span>Keluar</span>
                 </a>

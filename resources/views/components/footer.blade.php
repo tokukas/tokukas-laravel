@@ -3,8 +3,8 @@
         <div class="row">
             <div class="left-col col-lg-4">
                 <section class="mb-3">
-                    <a class="brand" href="/">
-                        <img src="assets/brand-white.svg" alt="brand" height="32" width="100%">
+                    <a class="brand" href="{{ url('/') }}">
+                        <img src="{{ url('/assets/brand-white.svg') }}" alt="brand" height="32" width="100%">
                         <div class="text-brand">
                             <span class="primary" translate="no">TOKUKAS</span>
                             <span class="secondary">Toko Buku Bekas</span>
@@ -44,12 +44,12 @@
                     </a>
                     <a href="https://signal.group/#CjQKIBOOTbfokZmxTuuAEuS-y-v0frkY6A3yjxdMJLh9f2OYEhDQWSDd7K8InBIEp7m1kYuY" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Signal TOKUKAS" aria-label="Gabung ke Channel Signal">
                         <div class="icon-box">
-                            <img src="assets/signal-app-icon-white.svg" alt="linktree icon" height="22" width="22">
+                            <img src="{{ url('/assets/signal-app-icon-white.svg') }}" alt="linktree icon" height="22" width="22">
                         </div>
                     </a>
                     <a href="https://linktr.ee/tokukas" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Linktree TOKUKAS" aria-label="Linktree TOKUKAS">
                         <div class="icon-box">
-                            <img src="assets/linktree-icon-white.svg" alt="linktree icon" height="22" width="22">
+                            <img src="{{ url('/assets/linktree-icon-white.svg') }}" alt="linktree icon" height="22" width="22">
                         </div>
                     </a>
                 </section>
@@ -60,11 +60,11 @@
                 </section>
                 <section>
                     <div class="footer-menus">
-                        <a href="about" class="menu">
+                        <a href="{{ url('/about') }}" class="menu">
                             <i class="material-icons" translate="no">chevron_right</i>
                             <span>Tentang Kami</span>
                         </a>
-                        <a href="sell" class="menu">
+                        <a href="{{ url('/sell') }}" class="menu">
                             <i class="material-icons" translate="no">chevron_right</i>
                             <span>Jual Buku</span>
                         </a>
@@ -78,16 +78,16 @@
                 <section class="d-flex gap-3 justify-content-center mb-3">
                     <a href="https://www.tokopedia.com/tokukas" target="_blank" rel="noreferrer" data-bs-toggle="tooltip" data-bs-placement="top" title="Lihat di Tokopedia" translate="no">
                         <picture>
-                            <source media="(min-width: 1080px)" srcset="assets/tokopedia-360w.png">
-                            <source media="(min-width: 720px)" srcset="assets/tokopedia-120w.png">
-                            <img class="shop-icon" src="assets/tokopedia-60w.png" alt="Logo Tokopedia" height="60" width="100%">
+                            <source media="(min-width: 1080px)" srcset="{{ url('/assets/tokopedia-360w.png') }}">
+                            <source media="(min-width: 720px)" srcset="{{ url('/assets/tokopedia-120w.png') }}">
+                            <img class="shop-icon" src="{{ url('/assets/tokopedia-60w.png') }}" alt="Logo Tokopedia" height="60" width="100%">
                         </picture>
                     </a>
                     <a href="https://shopee.co.id/tokukas" target="_blank" rel="noreferrer" data-bs-toggle="tooltip" data-bs-placement="top" title="Lihat di Shopee" translate="no">
                         <picture>
-                            <source media="(min-width: 1080px)" srcset="assets/shopee-360w.png">
-                            <source media="(min-width: 640px)" srcset="assets/shopee-120w.png">
-                            <img class="shop-icon" src="assets/shopee-60w.png" alt="Logo Shopee" height="60" width="100%">
+                            <source media="(min-width: 1080px)" srcset="{{ url('/assets/shopee-360w.png') }}">
+                            <source media="(min-width: 640px)" srcset="{{ url('/assets/shopee-120w.png') }}">
+                            <img class="shop-icon" src="{{ url('/assets/shopee-60w.png') }}" alt="Logo Shopee" height="60" width="100%">
                         </picture>
                     </a>
                 </section>
@@ -100,9 +100,9 @@
                 <span translate="no">&copy; 2021 - TOKUKAS</span>
             </section>
             <section class="d-inline-flex gap-2 text-center">
-                <a href="terms">Syarat Penggunaan</a>
+                <a href="{{ url('/terms') }}">Syarat Penggunaan</a>
                 <div class="vr"></div>
-                <a href="privacy">Kebijakan Privasi</a>
+                <a href="{{ url('/privacy') }}">Kebijakan Privasi</a>
             </section>
         </div>
     </div>

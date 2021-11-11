@@ -8,17 +8,17 @@
 
 {{-- CUSTOM STYLES SECTION --}}
 @section('custom-styles')
-    <link rel="preload" href="styles/css/error-404.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="styles/css/error-404.css"></noscript>
+    <link rel="preload" href="{{ url('/styles/css/error-404.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ url('/styles/css/error-404.css') }}"></noscript>
 @endsection
 
 
 {{-- CONTENT SECTION --}}
 @section('content')
     <picture>
-        <source media="(min-width: 1080px)" srcset="assets/brand-square-360w.jpg">
-        <source media="(min-width: 640px)" srcset="assets/brand-square-120w.jpg">
-        <img class="brand-mark" src="assets/brand-square-60w.jpg" alt="Brand" width="400" height="auto">
+        <source media="(min-width: 1080px)" srcset="{{ url('/assets/brand-square-360w.jpg') }}">
+        <source media="(min-width: 640px)" srcset="{{ url('/assets/brand-square-120w.jpg') }}">
+        <img class="brand-mark" src="{{ url('/assets/brand-square-60w.jpg') }}" alt="Brand" width="400" height="auto">
     </picture>
     <div class="centering-box">
         <h1>404 | Not Found</h1>
@@ -33,5 +33,5 @@
 
 {{-- CUSTOM SCRIPTS SECTION --}}
 @section('custom-scripts')
-    <script src="scripts/js/error-404.js" defer></script>
+    <script src="{{ url('/scripts/js/error-404.js') }}" defer></script>
 @endsection

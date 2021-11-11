@@ -64,6 +64,10 @@ body {
           align-items: center;
 }
 
+.centering-box .register-box {
+  max-width: 420px;
+}
+
 .centering-box .register-box .title {
   color: #0066cb;
   font-size: 1.75rem;
