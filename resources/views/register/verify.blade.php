@@ -40,7 +40,7 @@
 
                         {{-- Code verification field --}}
                         <section class="container mb-3">
-                            <p class="text-center">Masukkan kode verifikasi yang sudah kami kirim ke email <strong>{blablabla@email.com}</strong></p>
+                            <p class="text-center">Masukkan kode verifikasi yang sudah kami kirim ke email <strong>{{ $email }}</strong></p>
                             <form action="{{ url('/register/verify') }}" method="post" data-form-loading="true">
                                 @csrf
                                 {{-- TODO: set verification id --}}

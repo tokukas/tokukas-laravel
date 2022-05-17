@@ -16,9 +16,14 @@ class Register extends Controller
 
     public function verify()
     {
-        return view('register.verify', [
-            'title' => 'Verifikasi Email | TOKUKAS'
-        ]);
+        $viewData['title'] = 'Verifikasi | TOKUKAS';
+
+        $email = request('email');
+        $viewData['email'] = $email;
+
+        // TODO: Send email verification code to user's email
+
+        return view('register.verify', $viewData);
     }
 
 
